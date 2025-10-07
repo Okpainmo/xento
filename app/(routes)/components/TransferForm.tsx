@@ -100,7 +100,7 @@ export default function TokenTransferForm() {
       //   await provider?.getNetwork().then((network) => network.name)
       // );
 
-      await connect();
+      // await connect();
 
       setIsLoading(true);
 
@@ -147,7 +147,7 @@ export default function TokenTransferForm() {
       //   await provider?.getNetwork().then((network) => network.name)
       // );
 
-      await connect();
+      // await connect();
 
       setIsLoading(true);
 
