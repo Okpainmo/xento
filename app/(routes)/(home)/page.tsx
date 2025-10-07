@@ -45,7 +45,7 @@ function Home() {
           )}
         </div>
       </nav>
-      <section className='form-area w-full sm:w-[400px] sm:mx-auto mt-[150px] bg-white p-4 sm:p-6 rounded-[10px] shadow'>
+      <section className='form-area w-full sm:w-[400px] sm:mx-auto mt-[75px] sm:mt-[100px] md:mt-[150px] bg-white p-4 sm:p-6 rounded-[10px] shadow'>
         <section className='mb-6'>
           <h2 className='font-bold italic text-2xl mb-2'>Xento</h2>
           <span>Send Eth and Stablecoins Reliably...</span>
