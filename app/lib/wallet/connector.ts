@@ -27,7 +27,11 @@ const sepolia: CustomCaipNetwork = {
   name: 'Sepolia Testnet',
   nativeCurrency: { name: 'SepoliaETH', symbol: 'ETH', decimals: 18 },
   rpcUrls: {
-    default: { http: ['https://rpc.sepolia.org'] },
+    default: {
+      http: [
+        'https://eth-sepolia.g.alchemy.com/v2/3EYsnc1gjjfvC2BT52loZmjbLKQAqxdo',
+      ],
+    },
   },
 };
 
@@ -81,8 +85,8 @@ export async function getUniversalConnector() {
     metadata: {
       name: 'Universal Connector',
       description: 'Universal Connector',
-      url: 'https://your-dapp.com',
-      icons: ['https://your-dapp.com/icon.png']
+      url: 'https://xento.vercel.app/',
+      icons: ['https://your-dapp.com/icon.png'],
     },
     networks: [
       {
@@ -94,13 +98,13 @@ export async function getUniversalConnector() {
             caipNetworkId: 'eip155:1',
             name: 'Ethereum',
             nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
-            rpcUrls: { default: { http: ['https://rpc.ankr.com/eth'] } }
-          }
+            rpcUrls: { default: { http: ['https://rpc.ankr.com/eth'] } },
+          },
         ],
         events: [],
-        namespace: 'eip155'
-      }
-    ]
+        namespace: 'eip155',
+      },
+    ],
   });
 
   return universalConnector;
