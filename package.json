@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.9",
+    "@reduxjs/toolkit": "^2.9.2",
     "@reown/appkit": "^1.8.9",
     "@reown/appkit-adapter-ethers": "^1.8.9",
     "@reown/appkit-common": "^1.8.9",
@@ -16,11 +18,15 @@
     "@reown/walletkit": "^1.2.11",
     "@walletconnect/core": "^2.21.10",
     "@walletconnect/utils": "^2.21.10",
+    "axios": "^1.12.2",
     "ethers": "^6.15.0",
     "next": "15.5.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-hot-toast": "^2.6.0"
+    "react-hot-toast": "^2.6.0",
+    "react-icons": "^5.5.0",
+    "react-redux": "^9.2.0",
+    "swr": "^2.3.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
