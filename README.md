@@ -1,6 +1,6 @@
 # Xento
 
-An fully-custom EVM-based centralized exchange(CEX) Dapp for sending stablecoins and native tokens.
+A custom Defi payment layer with on-chain rewards.
 
 ## Repositories.
 
