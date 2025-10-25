@@ -3,12 +3,18 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import navToggleReducer from './slices/navToggleSlice';
 import transactionsTrayReducer from './slices/transactionsTraySlice';
 import modalReducer from './slices/modalSlice';
+import overlayReducer from './slices/overlaySlice';
+import tokenSelectionReducer from './slices/tokenSelectionSlice';
+import formTabReducer from './slices/formTabSlice';
 
 export const store = configureStore({
   reducer: {
     navToggle: navToggleReducer,
     modalToggle: modalReducer,
     transactionsTray: transactionsTrayReducer,
+    overlay: overlayReducer,
+    tokenSelection: tokenSelectionReducer,
+    formTab: formTabReducer,
   },
 });
 
