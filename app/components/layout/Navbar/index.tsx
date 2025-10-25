@@ -8,6 +8,8 @@ import NavLinks from '../NavLinks';
 import MenuToggleButtonForMobile from './components/MenuToggleButtonForMobile';
 // import MenuToggleButtonForDesktop from './components/MenuToggleButtonForDesktop';
 import { showModal } from '@/app/rtk-base/slices/modalSlice';
+import { slideTrayIn } from '@/app/rtk-base/slices/transactionsTraySlice';
+import { showOverlay } from '@/app/rtk-base/slices/overlaySlice';
 import { useState } from 'react';
 
 import { useWallet } from '@/app/lib/wallet/walletProvider';
@@ -32,6 +34,11 @@ function Navbar() {
     }
   };
 
+  const handleOpenTransactions = () => {
+    dispatch(slideTrayIn());
+    dispatch(showOverlay());
+  };
+
   return (
     <nav
       className={`w-full px-3 py-3 sm:px-[20px] lg:px-12 sm:py-4 md:pt-10 md:pb-6 flex justify-between items-center relative`}
@@ -43,12 +50,20 @@ function Navbar() {
           <NavLinks />
         </div>
       </div>
-      <div className='nav-right relative flex items-center'>
+      <div className='nav-right relative flex items-center gap-3'>
+        {/* {address && (
+          <button
+            onClick={handleOpenTransactions}
+            className='py-2.5 px-3 bg-blue-600 text-white rounded-[10px] text-[14px] text-center cursor-pointer hover:bg-blue-700 transition-colors'
+          >
+            Transactions
+          </button>
+        )} */}
         <div className='w-[150px]'>
           {address ? (
             <button
               onClick={disconnect}
-              className='py-2.5 px-3 bg-red-500 text-white w-full rounded-[10px] text-[14px] text-center cursor-pointer'
+              className='poppins font-normal py-2.5 px-3 bg-red-500 text-white w-full rounded-[10px] text-[14px] text-center cursor-pointer'
             >
               Disconnect
               {/* ({address.slice(0, 6)}...{address.slice(-4)}) */}
@@ -56,7 +71,7 @@ function Navbar() {
           ) : (
             <button
               onClick={handleConnect}
-              className='cursor-pointer py-2.5 px-3 bg-green-800 text-white w-full rounded-[10px] text-[14px] text-center flex items-center justify-center gap-2'
+              className='poppins font-normal cursor-pointer py-2.5 px-3 bg-blue-600 text-white w-full rounded-[10px] text-[14px] text-center flex items-center justify-center gap-2 hover:bg-blue-700 transition-colors'
             >
               {loading && (
                 <span className='w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin'></span>

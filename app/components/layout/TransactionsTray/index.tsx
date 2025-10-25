@@ -8,6 +8,7 @@ import {
   setActiveView,
   setLoading,
 } from '@/app/rtk-base/slices/transactionsTraySlice';
+import { hideOverlay } from '@/app/rtk-base/slices/overlaySlice';
 import TransactionCard from '../../TransactionCard';
 
 // Mock data - replace with your actual blockchain data
@@ -97,6 +98,11 @@ function TransactionsTray() {
     }, 1000);
   };
 
+  const handleClose = () => {
+    dispatch(slideTrayOut());
+    dispatch(hideOverlay());
+  };
+
   return (
     <nav
       className={`${
@@ -117,7 +123,7 @@ function TransactionsTray() {
             />
           </button>
           <button
-            onClick={() => dispatch(slideTrayOut())}
+            onClick={handleClose}
             className='p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors'
           >
             <HiOutlineXMark className='w-5 h-5' />

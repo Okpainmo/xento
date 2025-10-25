@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useAppDispatch, useAppSelector } from '@/app/rtk-base/store';
 import { slideNavOut } from '@/app/rtk-base/slices/navToggleSlice';
-// import { showModal } from '@/app/rtk-base/slices/modalSlice';
-// import { HiChevronDown } from 'react-icons/hi2';
 import { slideTrayIn } from '@/app/rtk-base/slices/transactionsTraySlice';
+import { showOverlay } from '@/app/rtk-base/slices/overlaySlice';
 
 function NavLinks() {
   const [showLearnMenu, setShowLearnMenu] = useState(false);
@@ -31,10 +30,22 @@ function NavLinks() {
           onClick={() => {
             dispatch(slideNavOut());
             dispatch(slideTrayIn());
+            dispatch(showOverlay());
           }}
           className='cursor-pointer flex justify-center border-b border-gray-300 py-5 lg:border-none lg:py-0 w-full'
         >
           Transactions
+        </div>
+      </li>
+      <li className='w-full'>
+        <div
+          onClick={() => {
+            dispatch(slideNavOut());
+            // dispatch(slideTrayIn());
+          }}
+          className='cursor-pointer flex justify-center border-b border-gray-300 py-5 lg:border-none lg:py-0 w-full'
+        >
+          Explore
         </div>
       </li>
       <li className='w-full'>
