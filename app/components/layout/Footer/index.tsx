@@ -5,7 +5,7 @@ import { FaTwitter, FaDiscord, FaGithub } from 'react-icons/fa';
 
 function Footer() {
   return (
-    <footer className='px-6 sm:px-16 pt-20 pb-10 bg-transparent text-gray-600'>
+    <footer className='px-6 sm:px-16 pt-[200px] pb-10 bg-transparent text-gray-600'>
       <div className='max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-8'>
         {/* Brand / Logo */}
         <div className='text-center sm:text-left'>
@@ -16,7 +16,9 @@ function Footer() {
             The Decentralized Exchange platform that grows with you.
           </p>
         </div>
+      </div>
 
+      <div className='flex justify-between max-w-6xl mx-auto mt-6'>
         {/* Navigation */}
         <nav className='flex flex-wrap justify-center gap-6 text-sm'>
           <a href='#' className='hover:text-white transition'>

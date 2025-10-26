@@ -251,6 +251,7 @@ export default function TokenTransferForm() {
               />
               <div className='items-center relative'>
                 <button
+                  type='button'
                   onClick={() => dispatch(openTokenPopup('send'))}
                   className='absolute cursor-pointer flex gap-1 items-center bg-white rounded-[20px] py-1 
               px-2 bottom-[-5px] right-[5px] border border-gray-200 hover:border-gray-300 transition-colors'

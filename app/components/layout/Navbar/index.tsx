@@ -41,7 +41,7 @@ function Navbar() {
 
   return (
     <nav
-      className={`w-full px-3 py-3 sm:px-[20px] lg:px-12 sm:py-4 md:pt-10 md:pb-6 flex justify-between items-center relative`}
+      className={`w-full px-3 py-3 sm:px-[20px] lg:px-8 sm:py-4 md:pt-10 md:pb-6 flex justify-between items-center relative`}
     >
       <div className='nav-left flex gap-x-3 sm:gap-x-6 lg:gap-x-12 items-center'>
         <MenuToggleButtonForMobile />

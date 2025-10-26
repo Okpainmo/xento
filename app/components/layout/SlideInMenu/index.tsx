@@ -16,7 +16,7 @@ function SlideInMenu() {
     <nav
       className={`${
         isNavSlidIn ? 'nav--slide-in' : 'nav--slide-out'
-      } bg-glass_light w-full lg:hidden fixed top-0 left-0 right-0 min-h-screen z-30`}
+      } bg-glass_light w-full lg:hidden fixed top-0 left-0 right-0 min-h-screen z-100`}
     >
       <div className='relative flex items-center'>
         <div
