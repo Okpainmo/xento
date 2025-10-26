@@ -10,7 +10,7 @@ import {
 import { tokens } from '@/app/custom-data/tokens';
 import Image from 'next/image';
 
-function TokenSelectionPopUp() {
+function SelectTokenPopUp() {
   const { isPopupOpen, selectedToken } = useAppSelector(
     (store) => store.tokenSelection
   );
@@ -160,4 +160,4 @@ function TokenSelectionPopUp() {
   );
 }
 
-export default TokenSelectionPopUp;
+export default SelectTokenPopUp;

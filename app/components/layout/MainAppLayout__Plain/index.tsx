@@ -12,7 +12,7 @@ import SlideInMenu from '../SlideInMenu';
 import MarketOverview from '../../MarketOverview';
 import TransactionsTray from '../TransactionsTray';
 import Overlay from '../Overlay';
-import TokenSelectionPopUp from '../../TokenSelectionPopUp';
+import TokenSelectionPopUp from '../../SelectTokenPopUp';
 import ExplorePopUp from '../../ExplorePopUp';
 // import { Toaster } from 'react-hot-toast';
 
