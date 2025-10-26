@@ -24,7 +24,7 @@ export default function TokenDetailsClient({
     <>
       {/* Sparkline Chart and DEX UI*/}
       <div className='last-7-days-chart w-full mt-8'>
-        <Sparklines data={coinDetails.market_data.sparkline_7d.price}>
+        <Sparklines data={coinDetails?.market_data?.sparkline_7d?.price}>
           <SparklinesLine color='blue' />
         </Sparklines>
         <div className='text--colors_secondary text-[13px] text-center'>
@@ -43,7 +43,7 @@ export default function TokenDetailsClient({
               Market cap
             </span>
             <span className='text-black'>
-              ${coinDetails.market_data.market_cap.usd.toLocaleString()}
+              ${coinDetails?.market_data?.market_cap?.usd?.toLocaleString()}
             </span>
           </div>
           <div>
@@ -51,7 +51,7 @@ export default function TokenDetailsClient({
               Mkt cap rank:{' '}
             </span>
             <span className='text-black'>
-              {coinDetails.market_data.market_cap_rank}
+              {coinDetails?.market_data?.market_cap_rank}
             </span>
           </div>
           <div className='flex flex-col'>
@@ -59,7 +59,7 @@ export default function TokenDetailsClient({
               Total volume
             </span>
             <span className='text-black'>
-              ${coinDetails.market_data.total_volume.usd.toLocaleString()}
+              ${coinDetails?.market_data?.total_volume?.usd?.toLocaleString()}
             </span>
           </div>
           <div className='flex flex-col'>
@@ -68,7 +68,9 @@ export default function TokenDetailsClient({
             </span>
             <span className='text-black'>
               $
-              {coinDetails.market_data.high_24h.usd.toFixed(6).toLocaleString()}
+              {coinDetails?.market_data?.high_24h?.usd
+                ?.toFixed(6)
+                .toLocaleString()}
             </span>
           </div>
           <div className='flex flex-col'>
@@ -76,7 +78,10 @@ export default function TokenDetailsClient({
               24h Low
             </span>
             <span className='text-black'>
-              ${coinDetails.market_data.low_24h.usd.toFixed(6).toLocaleString()}
+              $
+              {coinDetails?.market_data?.low_24h?.usd
+                ?.toFixed(6)
+                .toLocaleString()}
             </span>
           </div>
         </div>
@@ -92,31 +97,31 @@ export default function TokenDetailsClient({
             {
               label: 'Last 1 hour',
               value:
-                coinDetails.market_data.price_change_percentage_1h_in_currency
+                coinDetails?.market_data?.price_change_percentage_1h_in_currency
                   .usd,
             },
             {
               label: 'Last 24 hours',
               value:
-                coinDetails.market_data.price_change_percentage_24h_in_currency
-                  .usd,
+                coinDetails?.market_data
+                  ?.price_change_percentage_24h_in_currency.usd,
             },
             {
               label: 'Last 7 days',
               value:
-                coinDetails.market_data.price_change_percentage_7d_in_currency
+                coinDetails?.market_data?.price_change_percentage_7d_in_currency
                   .usd,
             },
             {
               label: 'Last 30 days',
               value:
-                coinDetails.market_data.price_change_percentage_30d_in_currency
-                  .usd,
+                coinDetails?.market_data
+                  ?.price_change_percentage_30d_in_currency.usd,
             },
             {
               label: 'Last 1 year',
               value:
-                coinDetails.market_data.price_change_percentage_1y_in_currency
+                coinDetails?.market_data?.price_change_percentage_1y_in_currency
                   .usd,
             },
           ].map(({ label, value }) => (
@@ -129,7 +134,7 @@ export default function TokenDetailsClient({
                   value > 0 ? 'gain-alert-color' : 'loss-alert-color'
                 } text-black`}
               >
-                {value.toFixed(4)}%
+                {value?.toFixed(4)}%
               </span>
             </div>
           ))}

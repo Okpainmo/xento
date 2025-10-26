@@ -1,5 +1,5 @@
 'use client';
-
+import Link from 'next/link';
 import FormsWrapper from '@/app/components/FormsWrapper';
 
 function Home() {
@@ -10,9 +10,19 @@ function Home() {
       </section>
       <section className='form-area w-full sm:w-[400px] sm:mx-auto mt-[30px] lg:mt-[50px] p-4 sm:p-6 rounded-[12px] shadow card-glass_light'>
         <FormsWrapper />
+        <div className='mt-3 text-center'>
+          Not swap/send, use{' '}
+          <Link
+            href='/buy-and-sell'
+            className='text-blue-600 font-normal underline'
+          >
+            buy/sell
+          </Link>{' '}
+          instead.
+        </div>
       </section>
       <section className='font-normal text-[16px] text-center w-full mt-6 sm:w-[400px] sm:mx-auto'>
-        Send or Swap tokens, and earn XNT(Xento) tokens as reward
+        Transact seamlessly, and earn XNT(Xento) tokens as reward
       </section>
     </main>
   );

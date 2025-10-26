@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 // import MainAppLayout from '@/app/components/layout/MainAppLayout';
 import TokenDetailsClient from './components/TokenDetails';
 import FormsWrapper from '@/app/components/FormsWrapper';
+import Link from 'next/link';
 
 interface CoinDetails {
   image: { large: string };
@@ -52,14 +53,14 @@ export default async function TokenPage({
       <section className='w-full lg:w-[calc(100%-300px)]'>
         {/* Token Header */}
         <div className='flex gap-6'>
-          <section>
-            <div className='w-[75px] relative z-10'>
+          <section className='relative'>
+            <div className='w-[75px] h-[75px] lg:w-[100px] lg:h-[100px]'>
               <Image
                 src={coinDetails.image.large}
                 alt={`${coinDetails.id} logo`}
                 fill
-                className='object-contain w-[75px] lg:w-[100px]'
-                sizes='75px'
+                className='object-contain'
+                sizes='(min-width: 1024px) 100px, 75px'
                 priority
               />
             </div>
@@ -94,8 +95,18 @@ export default async function TokenPage({
           description={coinDetails.description.en}
         />
       </section>
-      <div className='hidden lg:flex w-[300px]'>
+      <div className='hidden lg:flex w-[300px] lg:flex-col'>
         <FormsWrapper />
+        <div className='mt-3 text-center'>
+          Not swap/send, use{' '}
+          <Link
+            href='/buy-and-sell'
+            className='text-blue-600 font-normal underline'
+          >
+            buy/sell
+          </Link>{' '}
+          instead.
+        </div>
       </div>
     </main>
   );
