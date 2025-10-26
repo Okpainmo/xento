@@ -6,8 +6,8 @@ import { Toaster } from 'react-hot-toast';
 import MainAppLayout from '../../components/layout/MainAppLayout';
 
 export const metadata: Metadata = {
-  title: 'Xento: The EVM token transfer engine',
-  description: 'The EVM token transfer engine',
+  title: 'Xento: The DEX platform that grows with you',
+  description: 'The DEX platform that grows with you',
 };
 
 export default function RootLayout({
