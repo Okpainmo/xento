@@ -74,11 +74,21 @@ function ExplorePopUp() {
             </button>
           </div>
 
-          {/* ✅ Guide Text (moved to top) */}
-          <div className='px-6 pt-4 text-sm text-gray-500 text-center border-b border-gray-100'>
-            Select a token to view its history and current market stats
+          {/* Market Overview Link */}
+          <div className='px-6 pt-3 pb-0 border-t border-gray-100 text-center'>
+            <Link
+              href='/market'
+              onClick={() => handleClose()}
+              className='text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors'
+            >
+              View complete market overview →
+            </Link>
           </div>
 
+          {/* ✅ Guide Text (moved to top) */}
+          <div className='px-6 pt-4 pb-4 text-sm text-gray-500 text-center border-b border-gray-100'>
+            Select a token to view its history and current market stats
+          </div>
           {/* Search */}
           <div className='px-6 py-4 border-b border-gray-100'>
             <div className='relative'>

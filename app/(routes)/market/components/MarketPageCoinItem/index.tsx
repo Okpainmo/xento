@@ -47,16 +47,18 @@ export default function CoinItem({ coin }: CoinItemProps) {
           <div className='relative w-[25px] h-[25px]'>
             <Image src={image} alt={`${name} logo`} fill />
           </div>
-          <span className='pt-[5px] text-sm uppercase'>{symbol}</span>
+          <span className='pt-[5px] text-sm uppercase text-[12px] sm:text-[14px]'>
+            {symbol}
+          </span>
         </div>
       </div>
 
-      <div className='price w-[calc(25%_-_15px)] xl:w-[10%] flex justify-center items-center text-[13.5px]'>
+      <div className='price w-[calc(25%_-_15px)] xl:w-[10%] flex justify-center items-center text-[12px] sm:text-[14px]'>
         ${current_price.toLocaleString()}
       </div>
 
       <div
-        className={`last-24-hours w-[calc(16.66%_+_15px)] xl:w-[10%] flex justify-center items-center text-[13.5px] ${
+        className={`last-24-hours w-[calc(16.66%_+_15px)] xl:w-[10%] flex justify-center items-center text-[12px] sm:text-[14px] ${
           price_change_percentage_24h > 0
             ? 'gain-alert-color'
             : 'loss-alert-color'
