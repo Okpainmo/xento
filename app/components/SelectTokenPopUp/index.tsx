@@ -58,7 +58,7 @@ function SelectTokenPopUp() {
     <div className='w-full fixed top-0 left-0 right-0 bottom-0 min-h-screen bg-black/50 transition-opacity duration-300 z-50 p-3'>
       {/* Popup */}
       <div className='flex justify-center items-center min-h-screen'>
-        <div className='bg-white rounded-2xl shadow-2xl w-full sm:w-[400px] overflow-hidden'>
+        <div className='bg-white rounded-2xl shadow-2xl w-full sm:w-[400px] overflow-y-auto mb-[100px]'>
           {/* Header */}
           <div className='flex items-center justify-between px-6 py-4 border-b border-gray-100'>
             <h2 className='text-xl font-semibold text-gray-900'>
