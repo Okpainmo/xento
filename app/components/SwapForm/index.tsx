@@ -9,7 +9,7 @@ import {
   setToToken,
 } from '@/app/rtk-base/slices/tokenSelectionSlice';
 import { tokens } from '@/app/custom-data/tokens';
-import TokenSelectionPopup from '../TokenSelectionPopup';
+import TokenSelectionPopup from '../TokenSelectionPopUp';
 import Image from 'next/image';
 import { HiChevronDown, HiArrowPath } from 'react-icons/hi2';
 import { HiArrowSmallDown } from 'react-icons/hi2';
@@ -91,7 +91,7 @@ export default function SwapForm() {
                 placeholder='0.0'
                 value={fromAmount}
                 onChange={(e) => setFromAmount(e.target.value)}
-                required
+                // required
               />
               <div className='items-center relative'>
                 <button
@@ -128,7 +128,7 @@ export default function SwapForm() {
         </div>
 
         {/* Swap Direction Arrow */}
-        <div className='flex justify-center absolute top-[75px] left-[150px]'>
+        <div className='flex justify-center absolute top-[75px] left-1/2 -translate-x-1/2'>
           <div className='bg-white border border-gray-200 rounded-[12px] p-3 shadow-sm'>
             <HiArrowSmallDown className='w-6 h-6 text-gray-600' />
           </div>
@@ -153,7 +153,7 @@ export default function SwapForm() {
                 placeholder='0.0'
                 value={toAmount}
                 onChange={(e) => setToAmount(e.target.value)}
-                required
+                // required
               />
               <div className='items-center relative'>
                 <button
@@ -199,9 +199,6 @@ export default function SwapForm() {
           {isLoading ? 'Swapping...' : 'Swap Tokens'}
         </button>
       </form>
-
-      {/* Token Selection Popup */}
-      <TokenSelectionPopup />
     </>
   );
 }

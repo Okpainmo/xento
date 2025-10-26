@@ -16,7 +16,7 @@ import TokenSelectionPopUp from '../../TokenSelectionPopUp';
 import ExplorePopUp from '../../ExplorePopUp';
 // import { Toaster } from 'react-hot-toast';
 
-function MainAppLayout({ children }: ChildProp) {
+function MainAppLayout__Plain({ children }: ChildProp) {
   return (
     <>
       {/* <Toaster /> */}
@@ -27,7 +27,7 @@ function MainAppLayout({ children }: ChildProp) {
       <ExplorePopUp />
       {/* <CustomModal /> */}
       {/* <Overlay /> */}
-      <main className='main-app-layout bg-glass_light font-light min-h-screen md:px-[5%] lg:px-[10%] md:mx-auto text-[14px]'>
+      <main className='main-app-layout bg-white font-light min-h-screen md:px-[5%] lg:px-[10%] md:mx-auto text-[14px]'>
         <div>
           <Navbar />
           <MarketOverview />
@@ -39,4 +39,4 @@ function MainAppLayout({ children }: ChildProp) {
   );
 }
 
-export default MainAppLayout;
+export default MainAppLayout__Plain;

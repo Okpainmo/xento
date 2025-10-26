@@ -14,7 +14,7 @@ import {
   selectToken,
 } from '@/app/rtk-base/slices/tokenSelectionSlice';
 import { tokens } from '@/app/custom-data/tokens';
-import TokenSelectionPopup from '../TokenSelectionPopup';
+import TokenSelectionPopup from '../TokenSelectionPopUp';
 import Image from 'next/image';
 import { HiChevronDown } from 'react-icons/hi2';
 
@@ -247,7 +247,7 @@ export default function TokenTransferForm() {
                 placeholder='0.0'
                 value={form.amount}
                 onChange={(e) => setForm({ ...form, amount: e.target.value })}
-                required
+                // required
               />
               <div className='items-center relative'>
                 <button
@@ -296,7 +296,7 @@ export default function TokenTransferForm() {
               placeholder='Enter receiver address'
               value={form.receiver}
               onChange={(e) => setForm({ ...form, receiver: e.target.value })}
-              required
+              // required
             />
           </div>
         </div>
@@ -310,9 +310,6 @@ export default function TokenTransferForm() {
           {isLoading ? 'Processing...' : 'Send Tokens'}
         </button>
       </form>
-
-      {/* Token Selection Popup */}
-      <TokenSelectionPopup />
     </>
   );
 }

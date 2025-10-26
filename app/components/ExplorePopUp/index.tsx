@@ -4,16 +4,16 @@ import React, { useEffect } from 'react';
 import { HiOutlineXMark, HiMagnifyingGlass } from 'react-icons/hi2';
 import { useAppDispatch, useAppSelector } from '@/app/rtk-base/store';
 import {
-  closeTokenPopup,
-  selectToken,
-} from '@/app/rtk-base/slices/tokenSelectionSlice';
+  closeExplorePopup,
+  // selectToken,
+} from '@/app/rtk-base/slices/exploreSlice';
 import { tokens } from '@/app/custom-data/tokens';
 import Image from 'next/image';
+import { HiArrowUpRight } from 'react-icons/hi2';
+import Link from 'next/link';
 
-function TokenSelectionPopUp() {
-  const { isPopupOpen, selectedToken } = useAppSelector(
-    (store) => store.tokenSelection
-  );
+function ExplorePopUp() {
+  const { isPopupOpen } = useAppSelector((store) => store.explore);
   const dispatch = useAppDispatch();
   const [searchTerm, setSearchTerm] = React.useState('');
 
@@ -24,12 +24,12 @@ function TokenSelectionPopUp() {
       token.symbol.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleTokenSelect = (token: any) => {
-    dispatch(selectToken(token));
-  };
+  // const handleTokenSelect = (token: any) => {
+  //   dispatch(selectToken(token));
+  // };
 
   const handleClose = () => {
-    dispatch(closeTokenPopup());
+    dispatch(closeExplorePopup());
     setSearchTerm('');
   };
 
@@ -91,14 +91,11 @@ function TokenSelectionPopUp() {
             {filteredTokens.length > 0 ? (
               <div className='p-2'>
                 {filteredTokens.map((token) => (
-                  <button
+                  <Link
+                    href={`/tokens/${token.id}`}
                     key={token.address}
-                    onClick={() => handleTokenSelect(token)}
-                    className={`w-full flex items-center p-4 rounded-xl hover:bg-gray-50 transition-colors ${
-                      selectedToken?.address === token.address
-                        ? 'bg-blue-50 border border-blue-200'
-                        : ''
-                    }`}
+                    onClick={() => handleClose()}
+                    className={`w-full flex items-center p-4 rounded-xl hover:bg-gray-100 transition-colors bg-blue-200}justify-between`}
                   >
                     <div className='flex items-center space-x-3 flex-1'>
                       <div className='w-10 h-10 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center'>
@@ -111,30 +108,23 @@ function TokenSelectionPopUp() {
                         />
                       </div>
                       <div className='flex-1 text-left'>
-                        <div className='font-medium text-gray-900'>
+                        <div className='font-medium text-gray-900 text-[12px]'>
                           {token.symbol}
                         </div>
                         <div className='text-sm text-gray-500'>
-                          {token.name}
+                          {token.name.toLocaleLowerCase().startsWith('eth')
+                            ? token.name
+                            : `${token.address.slice(
+                                0,
+                                12
+                              )}...${token.address.slice(-4)}`}
                         </div>
                       </div>
                     </div>
-                    {selectedToken?.address === token.address && (
-                      <div className='w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center'>
-                        <svg
-                          className='w-4 h-4 text-white'
-                          fill='currentColor'
-                          viewBox='0 0 20 20'
-                        >
-                          <path
-                            fillRule='evenodd'
-                            d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
-                            clipRule='evenodd'
-                          />
-                        </svg>
-                      </div>
-                    )}
-                  </button>
+                    <div>
+                      <HiArrowUpRight className='text-[12px] text-blue-400' />
+                    </div>
+                  </Link>
                 ))}
               </div>
             ) : (
@@ -151,7 +141,7 @@ function TokenSelectionPopUp() {
           {/* Footer */}
           <div className='p-6 border-t border-gray-100 bg-gray-50'>
             <p className='text-sm text-gray-500 text-center'>
-              Select a token to continue with your transaction
+              Select a token to view its history and current market stats
             </p>
           </div>
         </div>
@@ -160,4 +150,4 @@ function TokenSelectionPopUp() {
   );
 }
 
-export default TokenSelectionPopUp;
+export default ExplorePopUp;

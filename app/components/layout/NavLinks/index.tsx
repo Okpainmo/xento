@@ -4,6 +4,11 @@ import { useAppDispatch, useAppSelector } from '@/app/rtk-base/store';
 import { slideNavOut } from '@/app/rtk-base/slices/navToggleSlice';
 import { slideTrayIn } from '@/app/rtk-base/slices/transactionsTraySlice';
 import { showOverlay } from '@/app/rtk-base/slices/overlaySlice';
+import {
+  closeExplorePopup,
+  openExplorePopup,
+  // selectToken,
+} from '@/app/rtk-base/slices/exploreSlice';
 
 function NavLinks() {
   const [showLearnMenu, setShowLearnMenu] = useState(false);
@@ -41,6 +46,7 @@ function NavLinks() {
         <div
           onClick={() => {
             dispatch(slideNavOut());
+            dispatch(openExplorePopup());
             // dispatch(slideTrayIn());
           }}
           className='cursor-pointer flex justify-center border-b border-gray-300 py-5 lg:border-none lg:py-0 w-full'

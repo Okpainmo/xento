@@ -1,7 +1,7 @@
 'use client';
 
 // import Image from 'next/image';
-// import Link from 'next/link';
+import Link from 'next/link';
 import { useAppDispatch, useAppSelector } from '@/app/rtk-base/store';
 // import Logo from '../../../assets/images/web3-mastery-logo.png';
 import NavLinks from '../NavLinks';
@@ -45,7 +45,9 @@ function Navbar() {
     >
       <div className='nav-left flex gap-x-3 sm:gap-x-6 lg:gap-x-12 items-center'>
         <MenuToggleButtonForMobile />
-        <div className='text-xl italic font-bold'>Xento</div>
+        <Link href='/' className='text-xl italic font-bold'>
+          Xento
+        </Link>
         <div className='nav-links-wrapper hidden lg:inline-block lg:mt-[7px]'>
           <NavLinks />
         </div>

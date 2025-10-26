@@ -104,7 +104,7 @@ function TransactionsTray() {
   };
 
   return (
-    <nav
+    <section
       className={`${
         isTraySlidIn ? 'tray--slide-in' : 'tray--slide-out'
       } bg-white shadow-lg w-full md:w-[400px] fixed top-0 left-0 right-0 bottom-0 min-h-screen z-50 rounded-tl-[15px] rounded-tr-[15px] md:rounded-[0px] flex flex-col`}
@@ -181,7 +181,7 @@ function TransactionsTray() {
           </div>
         )}
       </div>
-    </nav>
+    </section>
   );
 }
 
