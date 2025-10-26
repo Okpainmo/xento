@@ -6,9 +6,9 @@ import MainAppLayout__Plain from '@/app/components/layout/MainAppLayout__Plain';
 export default function GuidesPage() {
   return (
     <MainAppLayout__Plain>
-      <main className='px-4 sm:px-8 w-full md:w-10/12 mx-auto md:mt-8'>
+      <main className='px-4 sm:px-8 w-full md:w-10/12 mx-auto mt-6 md:mt-8'>
         {/* Page Header */}
-        <header className='text-center mb-10'>
+        <header className='text-center mb-8'>
           <h1 className='text-3xl sm:text-4xl font-bold text-gray-900'>
             Xento Guides
           </h1>
