@@ -65,7 +65,7 @@ function Navbar() {
           {address ? (
             <button
               onClick={disconnect}
-              className='poppins font-normal py-2.5 px-3 bg-red-500 text-white w-full rounded-[10px] text-[14px] text-center cursor-pointer'
+              className='poppins font-normal py-2.5 px-3 bg-red-500 text-white w-full rounded-[10px] text-[12px] sm:text-[14px] text-center cursor-pointer'
             >
               Disconnect
               {/* ({address.slice(0, 6)}...{address.slice(-4)}) */}
@@ -73,7 +73,7 @@ function Navbar() {
           ) : (
             <button
               onClick={handleConnect}
-              className='poppins font-normal cursor-pointer py-2.5 px-3 bg-blue-600 text-white w-full rounded-[10px] text-[14px] text-center flex items-center justify-center gap-2 hover:bg-blue-700 transition-colors'
+              className='poppins font-normal cursor-pointer py-2.5 px-3 bg-blue-600 text-white w-full rounded-[10px] text-[12px] sm:text-[14px] text-center flex items-center justify-center gap-2 hover:bg-blue-700 transition-colors'
             >
               {loading && (
                 <span className='w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin'></span>
