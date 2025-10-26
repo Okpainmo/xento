@@ -9,7 +9,7 @@ import {
   setToToken,
 } from '@/app/rtk-base/slices/tokenSelectionSlice';
 import { tokens } from '@/app/custom-data/tokens';
-import TokenSelectionPopup from '../TokenSelectionPopUp';
+import TokenSelectionPopup from '../SelectTokenPopUp';
 import Image from 'next/image';
 import { HiChevronDown, HiArrowPath } from 'react-icons/hi2';
 import { HiArrowSmallDown } from 'react-icons/hi2';

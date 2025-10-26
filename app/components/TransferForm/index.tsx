@@ -14,7 +14,7 @@ import {
   selectToken,
 } from '@/app/rtk-base/slices/tokenSelectionSlice';
 import { tokens } from '@/app/custom-data/tokens';
-import TokenSelectionPopup from '../TokenSelectionPopUp';
+import TokenSelectionPopup from '../SelectTokenPopUp';
 import Image from 'next/image';
 import { HiChevronDown } from 'react-icons/hi2';
 
