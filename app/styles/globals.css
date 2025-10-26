@@ -21,6 +21,14 @@ body {
 }
 
 @layer utilities {
+  .gain-alert-color {
+    @apply text-green-600;
+  }
+
+  .loss-alert-color {
+    @apply text-red-600;
+  }
+
   .bg-glass_light {
     /* Fallback for browsers without backdrop-filter support */
     background: rgba(255, 255, 255, 0.85);
