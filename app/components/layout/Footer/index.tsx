@@ -6,19 +6,19 @@ import { FaTwitter, FaDiscord, FaGithub } from 'react-icons/fa';
 function Footer() {
   return (
     <footer className='px-6 sm:px-16 pt-[200px] pb-10 bg-transparent text-gray-600'>
-      <div className='max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-8'>
+      <div className='max-w-6xl mx-auto flex flex-col sm:flex-row justify-center md:justify-between items-center gap-8'>
         {/* Brand / Logo */}
-        <div className='text-center sm:text-left'>
+        <div className='text-center md:text-left'>
           <h1 className='text-xl font-semibold text-gray-600 tracking-wide'>
             Xento
           </h1>
-          <p className='text-sm text-gray-500 mt-1'>
+          <p className='text-center md:text-left text-sm text-gray-500 mt-1'>
             The Decentralized Exchange platform that grows with you.
           </p>
         </div>
       </div>
 
-      <div className='flex justify-between max-w-6xl mx-auto mt-6'>
+      <div className='flex flex-col md:flex-row justify-between max-w-6xl mx-auto mt-6'>
         {/* Navigation */}
         <nav className='flex flex-wrap justify-center gap-6 text-sm'>
           <a href='#' className='hover:text-white transition'>
@@ -36,7 +36,7 @@ function Footer() {
         </nav>
 
         {/* Socials */}
-        <div className='flex gap-5 text-lg'>
+        <div className='flex gap-5 text-lg mt-6 md:mt-0 justify-center md:justify-end'>
           <a href='#' className='hover:text-white transition'>
             <FaTwitter />
           </a>
