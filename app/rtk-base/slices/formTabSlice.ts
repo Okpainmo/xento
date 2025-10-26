@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 interface FormTabState {
-  activeTab: 'swap' | 'send';
+  activeTab: 'swap' | 'send' | 'buy' | 'sell';
 }
 
 const initialState: FormTabState = {
@@ -21,10 +21,21 @@ const formTabSlice = createSlice({
     switchToSend: (state) => {
       state.activeTab = 'send';
     },
+    switchToBuy: (state) => {
+      state.activeTab = 'buy';
+    },
+    switchToSell: (state) => {
+      state.activeTab = 'sell';
+    },
   },
 });
 
-export const { setActiveTab, switchToSwap, switchToSend } =
-  formTabSlice.actions;
+export const {
+  setActiveTab,
+  switchToSwap,
+  switchToSend,
+  switchToBuy,
+  switchToSell,
+} = formTabSlice.actions;
 
 export default formTabSlice.reducer;
