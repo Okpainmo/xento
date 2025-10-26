@@ -20,10 +20,10 @@ const initialState: TokenSelectionState = {
 };
 
 const exploreSlice = createSlice({
-  name: 'tokenSelection',
+  name: 'explore',
   initialState,
   reducers: {
-    openExplorePopup: (state, action) => {
+    openExplorePopup: (state) => {
       state.isPopupOpen = true;
       // state.activeSelector = action.payload || null;
     },

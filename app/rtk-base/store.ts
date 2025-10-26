@@ -6,6 +6,7 @@ import modalReducer from './slices/modalSlice';
 import overlayReducer from './slices/overlaySlice';
 import tokenSelectionReducer from './slices/tokenSelectionSlice';
 import formTabReducer from './slices/formTabSlice';
+import exploreReducer from './slices/exploreSlice';
 
 export const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ export const store = configureStore({
     overlay: overlayReducer,
     tokenSelection: tokenSelectionReducer,
     formTab: formTabReducer,
+    explore: exploreReducer,
   },
 });
 
